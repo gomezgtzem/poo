@@ -1,5 +1,3 @@
-// El nombre de la clase debe de ir con la primer letra en MAYUSCULA
-
 class Pokemon {
   // Listado de atributos
   #name = "";
@@ -46,27 +44,20 @@ class Pokemon {
     return message;
   }
 }
+// HERENCIA 
+class TypeFire extends Pokemon {
+  constructor(name, evolutions) {
+    super(name, "fire", evolutions);
+  }
+  message() {
+    return `Hola, soy ${this.name} y soy de tipo fuego`;
+  }
+}
 
-const Charmander = new Pokemon("Charmander", "Fire", [
+const charmander = new TypeFire ('Charmander', [
   "Charmeleon",
   "Charizard",
 ]);
-const Squirtle = new Pokemon("Squirtle", "Water", ["Wartortle", "Blastoise"]);
-
-// Charmander
-document.write(`${Charmander.name} es de tipo ${Charmander.type}<br/>`);
-document.write(Charmander.attack());
-document.write(Charmander.evolve(0));
-document.write(`${Charmander.name} es de tipo ${Charmander.type}<br/>`);
-document.write(Charmander.evolve(1));
-document.write(`${Charmander.name} es de tipo ${Charmander.type}<br/>`);
-Charmander.name = '';
-console.log(`${Charmander.name}<br/>`);
-// End Charmander
-// Squirtle
-document.write(`${Squirtle.name} es de tipo ${Squirtle.type}<br/>`);
-document.write(Squirtle.attack());
-document.write(Squirtle.evolve(0));
-document.write(`${Squirtle.name} es de tipo ${Squirtle.type}<br/>`);
-document.write(Squirtle.evolve(1));
-document.write(`${Squirtle.name} es de tipo ${Squirtle.type}<br/>`);
+console.log(charmander.message());
+charmander.name = 'Gato'
+console.log(charmander.message());
